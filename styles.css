@@ -1,0 +1,26 @@
+/* --- Variables & Reset --- */
+:root  {
+  --primary: linear-gradient(135deg, #2cab9a, #1a7cff);
+  --dark: #0e1b2a;
+  --light: #f5f7fa;
+  --text: #333;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth; /* "Good stuff": Makes jumping to sections smooth */
+}
+
+body {
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+}
