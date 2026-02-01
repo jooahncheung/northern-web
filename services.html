@@ -28,9 +28,9 @@
             <h1>Web Solutions for Every Stage</h1>
             <p>High-performance websites designed to convert browsers into lifelong customers.</p>
         </div>
-    </header>   
+    </header>
 
-    <section class="services">
+<section class="services">
     <div class="section-header">
         <span class="kicker">Choose Your Path</span>
         <h2>Simple, Flat-Rate Packages</h2>
@@ -84,69 +84,83 @@
         </div>
     </div>
 </section>
-
-<section class="services" style="background: var(--light);">
+<section class="services add-ons-section" style="background: var(--light);">
     <div class="section-header">
         <span class="kicker">A La Carte</span>
         <h2>Add-On Services</h2>
         <p class="subtitle">Select individual services to enhance your digital presence.</p>
     </div>
 
-    <div class="category-title" style="margin: 40px 0 20px;">
-        <img src="images/icons/growth.png" alt="Growth Icon" style="width: 30px; vertical-align: middle; margin-right: 10px;">
-        <h3 style="display: inline-block; color: var(--dark);">Growth Services</h3>
+    <div class="category-block">
+        <div class="category-header" onclick="toggleCategory(this)">
+            <div class="category-title">
+                <img src="images/icons/growth.png" alt="Growth Icon">
+                <h3>Growth Services</h3>
+            </div>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="service-grid">
+            <div class="card">
+                <strong>Local SEO Optimization</strong>
+                <p>On-page SEO, location keywords, and Google Business Profile optimization to get you found locally.</p>
+            </div>
+            <div class="card">
+                <strong>Speed & Performance</strong>
+                <p>Image optimization and caching to reduce bounce rates and improve Google rankings.</p>
+            </div>
+            <div class="card">
+                <strong>Conversion Optimization</strong>
+                <p>Strategic CTA placement and form optimization to turn more visitors into actual leads.</p>
+            </div>
+        </div>
     </div>
-    <div class="service-grid">
-        <div class="card">
-            <strong>Local SEO Optimization</strong>
-            <p>On-page SEO, location keywords, and Google Business Profile optimization to get you found locally.</p>
+
+    <div class="category-block">
+        <div class="category-header" onclick="toggleCategory(this)">
+            <div class="category-title">
+                <img src="images/icons/brand.png" alt="Brand Icon">
+                <h3>Brand & Content</h3>
+            </div>
+            <span class="chevron">▼</span>
         </div>
-        <div class="card">
-            <strong>Speed & Performance</strong>
-            <p>Image optimization and caching to reduce bounce rates and improve Google rankings.</p>
-        </div>
-        <div class="card">
-            <strong>Conversion Optimization</strong>
-            <p>Strategic CTA placement and form optimization to turn more visitors into actual leads.</p>
+        <div class="service-grid">
+            <div class="card">
+                <strong>Logo & Identity</strong>
+                <p>Clean, modern branding including logo refinement, color palettes, and professional font selection.</p>
+            </div>
+            <div class="card">
+                <strong>Website Copywriting</strong>
+                <p>Clear, persuasive text written to convert visitors into customers, from headlines to service descriptions.</p>
+            </div>
+            <div class="card">
+                <strong>Visual Content</strong>
+                <p>Custom icons and section graphics that give your site a premium, unique, and polished look.</p>
+            </div>
         </div>
     </div>
 
-    <div class="category-title" style="margin: 60px 0 20px;">
-        <img src="images/icons/brand.png" alt="Brand Icon" style="width: 30px; vertical-align: middle; margin-right: 10px;">
-        <h3 style="display: inline-block; color: var(--dark);">Brand & Content</h3>
-    </div>
-    <div class="service-grid">
-        <div class="card">
-            <strong>Logo & Identity</strong>
-            <p>Clean, modern branding including logo refinement, color palettes, and professional font selection.</p>
+    <div class="category-block">
+        <div class="category-header" onclick="toggleCategory(this)">
+            <div class="category-title">
+                <img src="images/icons/wrench.png" alt="Technical Icon">
+                <h3>Technical & Ongoing</h3>
+            </div>
+            <span class="chevron">▼</span>
         </div>
-        <div class="card">
-            <strong>Website Copywriting</strong>
-            <p>Clear, persuasive text written to convert visitors into customers, from headlines to service descriptions.</p>
+        <div class="service-grid">
+            <div class="card">
+                <strong>Maintenance & Hosting</strong>
+                <p>Peace of mind with secure hosting, regular backups, and constant security monitoring.</p>
+            </div>
+            <div class="card">
+                <strong>Booking Integrations</strong>
+                <p>Quote systems or booking tools (Booksy, Google Calendar) built directly into your workflow.</p>
+            </div>
+            <div class="card">
+                <strong>Ongoing Updates</strong>
+                <p>Need a photo swapped or a price changed? Send a text and we’ll handle all your content edits.</p>
+            </div>
         </div>
-        <div class="card">
-            <strong>Visual Content</strong>
-            <p>Custom icons and section graphics that give your site a premium, unique, and polished look.</p>
-        </div>  
-    </div>
-
-    <div class="category-title" style="margin: 60px 0 20px;">
-        <img src="images/icons/wrench.png" alt="Technical Icon" style="width: 30px; vertical-align: middle; margin-right: 10px;">
-        <h3 style="display: inline-block; color: var(--dark);">Technical & Ongoing</h3>
-    </div>
-    <div class="service-grid">
-        <div class="card">
-            <strong>Maintenance & Hosting</strong>
-            <p>Peace of mind with secure hosting, regular backups, and constant security monitoring.</p>
-        </div>
-        <div class="card">
-            <strong>Booking Integrations</strong>
-            <p>Quote systems or booking tools (Booksy, Google Calendar) built directly into your workflow.</p>
-        </div>
-        <div class="card">
-            <strong>Ongoing Updates</strong>
-            <p>Need a photo swapped or a price changed? Send a text and we’ll handle all your content edits.</p>
-        </div>      
     </div>
 </section>
 
@@ -168,10 +182,31 @@
   </div>
 </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById('sideMenu').classList.toggle('open');
+
+
+<script>
+    // Main Navigation Menu Toggle
+    function toggleMenu() {
+        document.getElementById('sideMenu').classList.toggle('open');
+    }
+
+    // Add-on Services Toggle (Mobile Only)
+    function toggleCategory(headerElement) {
+        // Only trigger toggle if we are on a mobile-sized screen
+        if (window.innerWidth <= 768) {
+            const parent = headerElement.parentElement;
+            parent.classList.toggle('open');
         }
+    }
+
+    // Optional: Reset categories if window is resized to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.category-block').forEach(block => {
+                block.classList.remove('open');
+            });
+        }
+    });
     </script>
 </body>
 </html>

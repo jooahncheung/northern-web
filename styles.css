@@ -1,282 +1,289 @@
-/* --- Variables & Reset --- */
-:root {
-  --primary: linear-gradient(135deg, #2cab9a, #1a7cff);
-  --teal: #2cab9a;
-  --dark: #0e1b2a;
-  --light: #f5f7fa;
-  --text: #333;
-  --white: #ffffff;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}             
+  /* --- Variables & Reset --- */
+  :root {
+    --primary: linear-gradient(135deg, #2cab9a, #1a7cff);
+    --teal: #2cab9a;
+    --dark: #0e1b2a;
+    --light: #f5f7fa;
+    --text: #333;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
 
-* {
-  margin: 0; padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', system-ui, sans-serif;
-}
+  * {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
 
-html { scroll-behavior: smooth; }
-body { background: var(--light); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--light); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
-/* --- Navigation --- */
-.navbar {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  padding: env(safe-area-inset-top) 5% 10px; 
-  min-height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--white);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
+  /* --- Navigation --- */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    padding: env(safe-area-inset-top) 5% 10px; 
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
 
-.logo {
-  margin: 5px 5px 5px 15px;
-  height: 40px;
-  width: auto;
-  transform: scale(1.2);
-  object-fit: contain;
-}
+  .logo {
+    margin: 5px 5px 5px 15px;
+    height: 40px;
+    width: auto;
+    transform: scale(1.2);
+    object-fit: contain;
+  }
 
-.menu-btn {
-  font-size: 28px;
-  background: none; border: none;
-  cursor: pointer; color: var(--dark);
-}
+  .menu-btn {
+    font-size: 28px;
+    background: none; border: none;
+    cursor: pointer; color: var(--dark);
+  }
 
-/* --- Slide Menu --- */
-.side-menu {
-  position: fixed;
-  right: -100%; top: 0;
-  height: 100vh; width: 300px;
-  background: var(--dark);
-  display: flex;
-  flex-direction: column;
-  padding: 80px 40px;
-  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 2000;
-}
-
-.side-menu.open { right: 0; }
-
-.side-menu a, .footer-nav a {
-  position: relative;
-  text-decoration: none;
-  display: inline-block;
-  padding-bottom: 4px;
-  transition: 0.3s;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.side-menu a { color: var(--white); font-size: 22px; margin: 15px 0; }
-
-.side-menu a::after, .footer-nav a::after {
-  content: '';
-  position: absolute;
-  left: 0; bottom: 0;
-  width: 0; height: 2px;
-  background-color: var(--teal);
-  transition: width 0.3s ease;
-}
-
-.side-menu a:hover::after, .footer-nav a:hover::after,
-.side-menu a.active::after, .footer-nav a.active::after { width: 100%; }
-
-.side-menu a.active, .footer-nav a.active { opacity: 1; color: var(--white); }
-
-.close-btn {
-  position: absolute;
-  top: 20px; right: 20px;
-  background: none; border: none;
-  font-size: 45px; color: var(--white);
-  cursor: pointer;
-}
-
-/* --- Hero Section --- */
-.hero {
-  padding-top: 80px; 
-  height: 80vh; 
-  min-height: 700px;
-  background: url('/images/toronto.jpg') center/cover no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(14, 27, 42, 0.95) 30%, rgba(14, 27, 42, 0.3) 100%);
-}
-
-.hero-content {
-  position: relative; z-index: 2;
-  max-width: 900px; padding: 0 5%;
-  color: var(--white);
-}
-
-.kicker {
-  display: block; color: var(--teal);
-  text-transform: uppercase; letter-spacing: 3px;
-  font-weight: 700; margin-bottom: 10px;
-}
-
-.hero h1 { font-size: 4.5rem; font-weight: 800; line-height: 1.0; margin-bottom: 25px; }
-.hero p { font-size: 1.3rem; max-width: 600px; margin-bottom: 40px; opacity: 0.9; }
-
-.trust-bar { display: flex; gap: 25px; font-weight: 700; font-size: 0.95rem; flex-direction: column; }
-.highlight-teal { color: var(--teal); }
-
-/* --- Buttons --- */
-.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
-.btn {
-  padding: 18px 36px;
-  text-decoration: none; font-weight: 700;
-  border-radius: 8px; transition: 0.3s ease;
-  cursor: pointer; display: inline-block;
-}
-.primary { background: var(--primary); color: var(--white); border: none; }
-.secondary { border: 2px solid var(--white); color: var(--white); }
-.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-
-/* --- Section Layouts --- */
-.services, .reviews { padding: 100px 5%; background: var(--white); }
-.section-header { max-width: 800px; margin-bottom: 60px; }
-
-.section-header h2 {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 800; color: var(--dark);
-  line-height: 1.1; margin-bottom: 15px;
-}
-
-.subtitle { font-size: 1.25rem; color: #666; }
-
-.service-grid, .review-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-/* --- Cards --- */
-.card, .review-card {
-  background: var(--light); padding: 40px;
-  border-radius: 20px; transition: 0.3s;
-  border: 1px solid transparent;
-}
-.card:hover { transform: translateY(-10px); border-color: var(--teal); box-shadow: var(--shadow); }
-.card img { width: 50px; margin-bottom: 20px; }
-.review-card strong { display: block; margin-top: 15px; color: var(--dark); }
-.stars { color: #f39c12; margin: 10px 0; }
-
-/* --- Footer --- */
-.site-footer {
-  background: var(--dark); padding: 80px 5%;
-  text-align: center; border-top: 5px solid var(--teal);
-}
-
-.footer-nav {
-  display: flex; gap: 40px;
-  justify-content: center; margin-bottom: 50px;
-  flex-wrap: wrap; 
-}
-
-.footer-nav a { color: var(--white); opacity: 0.7; font-size: 0.9rem; letter-spacing: 1px; }
-
-.footer-email {
-  color: var(--white); text-decoration: none;
-  font-size: clamp(1.4rem, 6vw, 2.5rem); font-weight: 800;
-}
-.footer-email:hover { color: var(--teal); }
-.footer-cta-box p { color: var(--teal); letter-spacing: 2px; font-weight: 700; margin-bottom: 10px; }
-
-/* ==========================================
-   NEW: SERVICES PAGE SPECIFIC 
-   (Placeholder for next step)
-   ========================================== */
-.pricing-table { /* styles will go here */ }
-
-/* --- Mobile Responsiveness --- */
-@media (max-width: 768px) {
-  .navbar { padding: calc(10px + env(safe-area-inset-top)) 20px 10px; }
-  .hero { padding-top: 75px; height: auto; min-height: 100vh; }
-  .hero h1 { font-size: 3rem; }
-  .hero-content { padding: 0 20px; }
-  .hero-buttons { flex-direction: column; width: 100%; }
-  .btn { width: 100%; text-align: center; }
-  .trust-bar { gap: 10px; }
-  .footer-nav { gap: 20px; }
-  .footer-nav a { font-size: 0.75rem; }
-}
-/* --- Services Page Tweaks --- */
-.services-hero {
-    height: 60vh; 
-    min-height: 450px; 
-    background-color: var(--dark);
-}
-
-.pricing-card {
+  /* --- Slide Menu --- */
+  .side-menu {
+    position: fixed;
+    right: -100%; top: 0;
+    height: 100vh; width: 300px;
+    background: var(--dark);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
+    padding: 80px 40px;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2000;
+  }
 
-.pricing-card.featured {
-    border: 2px solid var(--teal);
+  .side-menu.open { right: 0; }
+
+  .side-menu a, .footer-nav a {
     position: relative;
-    transform: scale(1.03);
-}
+    text-decoration: none;
+    display: inline-block;
+    padding-bottom: 4px;
+    transition: 0.3s;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
 
-.popular-tag {
+  .side-menu a { color: var(--white); font-size: 22px; margin: 15px 0; }
+
+  .side-menu a::after, .footer-nav a::after {
+    content: '';
     position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--teal);
+    left: 0; bottom: 0;
+    width: 0; height: 2px;
+    background-color: var(--teal);
+    transition: width 0.3s ease;
+  }
+
+  .side-menu a:hover::after, .footer-nav a:hover::after,
+  .side-menu a.active::after, .footer-nav a.active::after { width: 100%; }
+
+  .side-menu a.active, .footer-nav a.active { opacity: 1; color: var(--white); }
+
+  .close-btn {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: none; border: none;
+    font-size: 45px; color: var(--white);
+    cursor: pointer;
+  }
+
+  /* --- Hero Section --- */
+  .hero {
+    padding-top: 80px; 
+    height: 80vh; 
+    min-height: 700px;
+    background: url('/images/toronto.jpg') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(14, 27, 42, 0.95) 30%, rgba(14, 27, 42, 0.3) 100%);
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 900px; padding: 0 5%;
     color: var(--white);
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 800;
-}
+  }
 
-.feature-list {
-    list-style: none;
-    margin: 20px 0;
-}
+  .kicker {
+    display: block; color: var(--teal);
+    text-transform: uppercase; letter-spacing: 3px;
+    font-weight: 700; margin-bottom: 10px;
+  }
 
-.feature-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    font-size: 0.95rem;
-}
+  .hero h1 { font-size: 4.5rem; font-weight: 800; line-height: 1.0; margin-bottom: 25px; }
+  .hero p { font-size: 1.3rem; max-width: 600px; margin-bottom: 40px; opacity: 0.9; }
 
-.feature-list li::before {
-    content: '✓';
-    color: var(--teal);
-    margin-right: 10px;
-    font-weight: bold;
-}
+  .trust-bar { display: flex; gap: 25px; font-weight: 700; font-size: 0.95rem; flex-direction: column; }
+  .highlight-teal { color: var(--teal); }
 
-@media (max-width: 768px) {
-    .pricing-card.featured { transform: scale(1); margin-top: 30px; }
+  /* --- Buttons --- */
+  .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
+  .btn {
+    padding: 18px 36px;
+    text-decoration: none; font-weight: 700;
+    border-radius: 8px; transition: 0.3s ease;
+    cursor: pointer; display: inline-block;
+  }
+  .primary { background: var(--primary); color: var(--white); border: none; }
+  .secondary { border: 2px solid var(--white); color: var(--white); }
+  .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+  /* --- Section Layouts --- */
+  .services, .reviews { padding: 100px 5%; background: var(--white); }
+  .section-header { max-width: 800px; margin-bottom: 60px; }
+
+  .section-header h2 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 800; color: var(--dark);
+    line-height: 1.1; margin-bottom: 15px;
+  }
+
+  .subtitle { font-size: 1.25rem; color: #666; }
+
+  .service-grid, .review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  /* --- Cards --- */
+  .card, .review-card {
+    background: var(--light); padding: 40px;
+    border-radius: 20px; transition: 0.3s;
+    border: 1px solid transparent;
+  }
+  .card:hover { transform: translateY(-10px); border-color: var(--teal); box-shadow: var(--shadow); }
+  .card img { width: 50px; margin-bottom: 20px; }
+  .review-card strong { display: block; margin-top: 15px; color: var(--dark); }
+  .stars { color: #f39c12; margin: 10px 0; }
+
+  /* --- Footer --- */
+  .site-footer {
+    background: var(--dark); padding: 80px 5%;
+    text-align: center; border-top: 5px solid var(--teal);
+  }
+
+  .footer-nav {
+    display: flex; gap: 40px;
+    justify-content: center; margin-bottom: 50px;
+    flex-wrap: wrap; 
+  }
+
+  .footer-nav a { color: var(--white); opacity: 0.7; font-size: 0.9rem; letter-spacing: 1px; }
+
+  .footer-email {
+    color: var(--white); text-decoration: none;
+    font-size: clamp(1.4rem, 6vw, 2.5rem); font-weight: 800;
+  }
+  .footer-email:hover { color: var(--teal); }
+  .footer-cta-box p { color: var(--teal); letter-spacing: 2px; font-weight: 700; margin-bottom: 10px; }
+
+  /* ==========================================
+    NEW: SERVICES PAGE SPECIFIC 
+    (Placeholder for next step)
+    ========================================== */
+  .pricing-table { /* styles will go here */ }
+
+  /* --- Mobile Responsiveness --- */
+  @media (max-width: 768px) {
+    .navbar { padding: calc(10px + env(safe-area-inset-top)) 20px 10px; }
+    .hero { padding-top: 75px; height: auto; min-height: 100vh; }
+    .hero h1 { font-size: 3rem; }
+    .hero-content { padding: 0 20px; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .btn { width: 100%; text-align: center; }
+    .trust-bar { gap: 10px; }
+    .footer-nav { gap: 20px; }
+    .footer-nav a { font-size: 0.75rem; }
+  }
+  /* --- Services Page Tweaks --- */
+  .services-hero {
+      height: 60vh; 
+      min-height: 450px; 
+      background-color: var(--dark);
+  }
+
+  .pricing-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .pricing-card.featured {
+      border: 2px solid var(--teal);
+      position: relative;
+      transform: scale(1.03);
+  }
+
+  .popular-tag {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--teal);
+      color: var(--white);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 800;
+  }
+
+  .feature-list {
+      list-style: none;
+      margin: 20px 0;
+  }
+
+  .feature-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-size: 0.95rem;
+  }
+
+  .feature-list li::before {
+      content: '✓';
+      color: var(--teal);
+      margin-right: 10px;
+      font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+      .pricing-card.featured { transform: scale(1); margin-top: 30px; }
+  }
+/* --- Add-on Services --- */
+.category-block { margin-bottom: 40px; }
+
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
 }
-/* --- Add-on Services & Category Titles --- */
 
 .category-title {
     display: flex;
     align-items: center;
-    margin: 50px 0 25px 0;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--teal);
     width: fit-content;
 }
 
 .category-title img {
-    width: 35px;
+    width: 35px; /* Your requested size */
     height: 35px;
     margin-right: 15px;
     object-fit: contain;
@@ -286,39 +293,101 @@ body { background: var(--light); color: var(--text); line-height: 1.6; overflow-
     font-size: 1.4rem;
     color: var(--dark);
     margin: 0;
-    letter-spacing: 0.5px;
 }
 
-/* Enhanced Cards to prevent "blending in" */
-.service-grid .card {
-    background: var(--white); /* Forces it to stand out against light grey bgs */
+.chevron {
+    color: var(--teal);
+    transition: transform 0.3s;
+    display: none; 
+}
+
+/* --- THE CARD FIX: High Visibility --- */
+.add-ons-section .service-grid .card {
+    background: #ffffff !important; /* Absolute white */
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft shadow for depth */
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Very thin border for definition */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Stronger, darker shadow for better depth */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), 0 5px 15px rgba(0, 0, 0, 0.05);
+    /* Darker border for crisp edges */
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
-/* Hover effect to make it interactive */
-.service-grid .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+/* Lift effect on hover */
+.add-ons-section .service-grid .card:hover {
+    transform: translateY(-8px);
     border-color: var(--teal);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
 }
 
-.service-grid .card strong {
+.add-ons-section .service-grid .card strong {
     display: block;
     font-size: 1.15rem;
     color: var(--dark);
     margin-bottom: 12px;
-    position: relative;
 }
 
-.service-grid .card p {
+.add-ons-section .service-grid .card p {
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #555;
+    color: #444; /* Slightly darker text for readability */
     margin: 0;
+}
+
+/* --- Mobile Specific Logic --- */
+@media (max-width: 768px) {
+    .chevron { display: block; }
+
+    .category-header {
+        background: #ffffff;
+        padding: 15px 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        margin-bottom: 10px; /* Space between headers when closed */
+    }
+
+    .category-title { border-bottom: none; padding: 0; }
+
+    /* Hide the grid by default ONLY on mobile */
+    .category-block .service-grid {
+        display: none; 
+        grid-template-columns: 1fr;
+        padding: 10px 0 30px;
+        gap: 20px;
+    }
+
+    /* Show the grid when the "open" class is added via JS */
+    .category-block.open .service-grid {
+        display: grid;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .category-block.open .chevron { transform: rotate(180deg); }
+}
+
+/* --- Desktop Layout (Ensure visibility) --- */
+@media (min-width: 769px) {
+    .category-block .service-grid {
+        display: grid !important; /* Force grid to show on desktop */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 25px;
+        margin-bottom: 60px; /* Space between desktop categories */
+    }
+    
+    .category-header {
+        cursor: default; /* Remove pointer on desktop since it doesn't click */
+    }
+}
+/* --- Desktop Layout --- */
+@media (min-width: 769px) {
+    .add-ons-section .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Force 3 columns on desktop */
+        gap: 30px;
+        margin-top: 25px;
+    }
 }
