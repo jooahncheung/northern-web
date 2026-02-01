@@ -211,3 +211,56 @@ body { background: var(--light); color: var(--text); line-height: 1.6; overflow-
   .footer-nav { gap: 20px; }
   .footer-nav a { font-size: 0.75rem; }
 }
+/* --- Services Page Tweaks --- */
+.services-hero {
+    height: 60vh; 
+    min-height: 450px; 
+    background-color: var(--dark);
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--teal);
+    position: relative;
+    transform: scale(1.03);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--teal);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.feature-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.feature-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.95rem;
+}
+
+.feature-list li::before {
+    content: '✓';
+    color: var(--teal);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .pricing-card.featured { transform: scale(1); margin-top: 30px; }
+}
