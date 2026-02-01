@@ -270,3 +270,142 @@ body {
 .card:hover img {
   transform: rotate(5deg) scale(1.1);
 }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .services, .reviews {
+    padding: 60px 20px;
+  }
+  
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+}
+/* --- CTA --- */
+.cta {
+  background: var(--dark);
+  color: var(--white);
+  padding: 100px 5%;
+  text-align: center;
+}
+
+footer {
+  padding: 30px;
+  text-align: center;
+  font-size: 14px;
+  background: #eee;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column; /* Stacks buttons on top of each other */
+    width: 100%;
+    gap: 15px; /* Creates the gap so they don't merge */
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .trust-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+  }
+}
+  /* --- MINIMALIST FOOTER --- */
+  /* --- MINIMALIST NEON FOOTER --- */
+  .site-footer {
+    background: var(--dark);
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    
+    /* THE NEON LINE */
+    border-top: 4px solid #2cab9a;
+    box-shadow: 0px -10px 20px rgba(27, 212, 198, 0.15); /* Soft neon glow */
+  }
+
+  /* Nav Links */
+  .footer-nav {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .footer-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    transition: 0.3s ease;
+  }
+
+  .footer-nav a:hover {
+    opacity: 1;
+    color: #2cab9a;
+    transform: translateY(-2px); /* Tiny lift on hover */
+  }
+
+  /* Call to Action */
+  .footer-cta-box p {
+    color: #2cab9a;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+  }
+
+  .footer-email {
+    color: var(--white);
+    text-decoration: none;
+    font-size: clamp(1.2rem, 5vw, 2.2rem); 
+    font-weight: 800;
+    transition: 0.3s ease;
+  }
+
+  .footer-email:hover {
+    color: #2cab9a;
+    opacity: 1;
+  }
+
+  /* Location Tag */
+  .footer-location {
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .footer-location span {
+    color: var(--white);
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    opacity: 0.3;
+  }
+
+  /* Mobile Fix */
+  @media (max-width: 768px) {
+    .footer-nav {
+      flex-direction: column;
+      gap: 25px;
+    }
+    
+    .site-footer {
+      padding: 80px 20px;
+      gap: 45px;
+    }
+  }
