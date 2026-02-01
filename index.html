@@ -9,7 +9,21 @@
 <body>
 
 <!-- NAV -->
-<header></header>
+<header class="navbar">
+  <img src="/images/icons/logo.png" alt="Northern Web Online" class="logo">
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- SLIDE MENU -->
+<nav class="side-menu" id="sideMenu">
+  <button class="close-btn" onclick="toggleMenu()">×</button>
+  <a href="#">Home</a>
+  <a href="#">Services</a>
+  <a href="#">Portfolio</a>
+  <a href="#">Contact</a>
+  <a href="#" class="menu-cta">Get a Free Demo</a>
+</nav>
 
 <!-- SLIDE MENU -->
 <nav>
@@ -33,5 +47,12 @@
 
 <footer>
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("sideMenu").classList.toggle("open");
+}
+</script>
+
 </body>
 </html>
