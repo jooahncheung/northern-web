@@ -452,4 +452,43 @@
         gap: 30px;
         margin-top: 25px;
     }
-}   
+}
+/* --- Portfolio Layout Logic --- */
+.portfolio-item { padding: 80px 5%; }
+.alt-bg { background: #f4f7f9; }
+
+.project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.project-container.reverse { flex-direction: row-reverse; }
+
+.project-info { flex: 1; }
+.project-visual { flex: 1.2; position: relative; }
+
+/* Tier Tags */
+.tier-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.standard { background: #e0f2f1; color: var(--teal); }
+.professional { background: #e3f2fd; color: #1a7cff; }
+.partner { background: var(--dark); color: #fff; }
+
+.project-features {
+    list-style: none;
+    margin: 20px 0;
+}
+.project-features li::before {
+    content: "✓ ";
+    color: var(--teal);
+    font-weight: bold;
+}
