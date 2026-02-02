@@ -18,6 +18,8 @@
   html { scroll-behavior: smooth; }
   body { background: var(--light); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
+body p {text-align: left;}
+
   /* --- Navigation --- */
   .navbar {
     position: fixed;
@@ -532,6 +534,12 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 992px) {
+    .site-footer p {text-align: center;}
+    p  {text-align: left;}
+    li {text-align: left;}
+    h2 {text-align: left;}
+    .tier-tag{display: flex; max-width: fit-content;}
+
     .project-container, .project-container.reverse {
         flex-direction: column;
         text-align: center;
