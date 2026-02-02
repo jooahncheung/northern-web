@@ -492,3 +492,44 @@
     color: var(--teal);
     font-weight: bold;
 }
+
+/* Device Mockups Styling */
+.mockup-wrapper { position: relative; width: 100%; }
+.laptop-img {
+    width: 90%;
+    border: 8px solid #222;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+.phone-img {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 28%;
+    border: 6px solid #111;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Placeholder for Partner Tier */
+.partner-placeholder {
+    width: 90%;
+    aspect-ratio: 16/10;
+    background: #e0e0e0;
+    border: 2px dashed #bbb;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .project-container, .project-container.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+    .phone-img { width: 25%; right: 10%; bottom: -20px; }
+}
