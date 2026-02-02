@@ -12,24 +12,35 @@
         <img src="images/icons/logo.png" alt="Northern Web" class="logo">
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
     </nav>
-
-    <div class="side-menu" id="sideMenu">
-        <button class="close-btn" onclick="toggleMenu()">×</button>
+    ///
+<nav class="side-menu" id="sideMenu">
+  <button class="close-btn" onclick="toggleMenu()">&times;</button>
         <a href="index.html">Home</a>
         <a href="services.html" class="active">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
+  <a href="/portfolio" class="nav-link">Portfolio</a>
+  <a href="/contact" class="nav-link">Contact</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="kicker">Pricing & Plans</span>
+    <h1>TRANSPARENT<br>PRICING<br>SOLUTIONS</h1>
+    <p>High-performance websites designed to convert<br>browsers into lifelong customers.</p>
+    
+    <div class="hero-buttons">
+      <a href="#pricing" class="btn primary">VIEW PLANS</a>
+      <a href="contact.html" class="btn secondary">GET A QUOTE</a>
     </div>
 
-    <header class="hero services-hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="kicker">Pricing & Plans</span>
-            <h1>Web Solutions for Every Stage</h1>
-            <p>High-performance websites designed to convert browsers into lifelong customers.</p>
-        </div>
-    </header>
-
+    <div class="trust-bar">
+      <ul class="feature-list">
+<li>Transparent Pricing</li>
+        <li>No Hidden Fees</li>
+        <li>100% Canadian Support</li></ul>  
+    </div>
+  </div>
+</section>
 <section class="services">
     <div class="section-header">
         <span class="kicker">Choose Your Path</span>

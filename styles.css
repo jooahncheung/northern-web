@@ -148,7 +148,7 @@
   .section-header { max-width: 800px; margin-bottom: 60px; }
 
   .section-header h2 {
-    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);  
     font-weight: 800; color: var(--dark);
     line-height: 1.1; margin-bottom: 15px;
   }
@@ -212,11 +212,13 @@
     .footer-nav a { font-size: 0.75rem; }
   }
   /* --- Services Page Tweaks --- */
-  .services-hero {
-      height: 60vh; 
-      min-height: 450px; 
-      background-color: var(--dark);
-  }
+.services-hero {
+    /* This ensures it uses the same image background as index */
+    background: url('/images/toronto.jpg') center/cover no-repeat;
+    /* This matches the index hero height exactly */
+    height: 80vh; 
+    min-height: 700px;
+}
 
   .pricing-card {
       display: flex;
@@ -352,33 +354,33 @@
 
     .pricing-slider-wrapper::-webkit-scrollbar { display: none; }
 
-    /* The container for the cards inside the slider */
+    /* The grid inside the carousel becomes a flex row */
     .pricing-slider-wrapper .service-grid {
         display: flex;
         gap: 15px;
-        padding: 0 15%; /* Ensures side cards peek in even on the middle plan */
+        padding: 0 15%; /* Room for side cards to peek in */
     }
 
-    /* 2. Pricing Cards (Inactive State) */
+    /* 2. Pricing Cards (Default/Inactive State) */
     .pricing-card {
-        width: 70vw; /* Narrower width for better visibility of side options */
+        width: 70vw; /* Narrower width ensures the "peek" effect works */
         flex-shrink: 0;
         scroll-snap-align: center;
         
-        /* FAINT BORDER: Very subtle teal line */
-        border: 1px solid rgba(44, 171, 154, 0.15);
+        /* Faint teal border for inactive cards */
+        border: 1px solid rgba(44, 171, 154, 0.2);
         
-        /* Shrunken and lowered */
+        /* Shrunken and lowered state */
         transform: scale(0.85) translateY(30px); 
-        opacity: 0.4;
+        opacity: 0.5;
         filter: blur(1px);
         transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         position: relative;
     }
 
-    /* 3. Pricing Cards (Active State) */
+    /* 3. Pricing Cards (Active/Focused State) */
     .pricing-card.active {
-        /* SOLID BORDER: Bright teal when in focus */
+        /* Solid teal border when focused */
         border: 2px solid var(--teal); 
         
         transform: scale(1.05) translateY(0);
@@ -398,12 +400,11 @@
         border: 1px solid rgba(0, 0, 0, 0.1);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         margin-bottom: 10px;
-        cursor: pointer;
     }
 
     .category-title { border-bottom: none; padding: 0; }
 
-    /* Hide the grid for dropdowns only */
+    /* Dropdown content is hidden by default */
     .category-block .service-grid {
         display: none; 
         grid-template-columns: 1fr;
@@ -411,7 +412,7 @@
         gap: 20px;
     }
 
-    /* Show dropdown content when toggled */
+    /* Show dropdown when toggled */
     .category-block.open .service-grid {
         display: grid;
         animation: fadeIn 0.3s ease;
@@ -419,36 +420,36 @@
 
     .category-block.open .chevron { transform: rotate(180deg); }
 }
-
-/* --- Desktop Layout (769px and Up) --- */
-@media (min-width: 769px) {
-    /* Reset Pricing Cards for Desktop */
-    .pricing-card {
-        width: 100%;
-        opacity: 1 !important;
-        transform: none !important;
-        filter: none !important;
-        border: 1px solid transparent;
-    }
-
-    .pricing-card.featured {
-        border: 2px solid var(--teal);
-        transform: scale(1.03) !important;
-    }
-
-    /* Force Dropdowns to be normal Grids on Desktop */
+    /* --- Add-on Dropdowns --- */
     .category-block .service-grid {
-        display: grid !important; 
+        display: none; /* Hidden until clicked */
+        grid-template-columns: 1fr;
+    }
+
+    .category-block.open .service-grid {
+        display: grid; /* Shows when clicked */
+    }
+}
+/* --- Desktop Layout (Ensure visibility) --- */
+@media (min-width: 769px) {
+    .category-block .service-grid {
+        display: grid !important; /* Force grid to show on desktop */
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
         margin-top: 25px;
-        margin-bottom: 60px;
+        margin-bottom: 60px; /* Space between desktop categories */
     }
     
     .category-header {
-        cursor: default;
-        pointer-events: none; /* Disables clicking the header on desktop */
+        cursor: default; /* Remove pointer on desktop since it doesn't click */
     }
-
-    .chevron { display: none; }
+}
+/* --- Desktop Layout --- */
+@media (min-width: 769px) {
+    .add-ons-section .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Force 3 columns on desktop */
+        gap: 30px;
+        margin-top: 25px;
+    }
 }
