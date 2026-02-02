@@ -1,123 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Northern Web Online | Website Design</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northern Web Online | Website Design</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <img
+        src="/images/icons/logo.png"
+        alt="Northern Web Online"
+        class="logo"
+      />
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </header>
 
-<header class="navbar">
-  <img src="/images/icons/logo.png" alt="Northern Web Online" class="logo">
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-</header>
+    <nav class="side-menu" id="sideMenu">
+      <button class="close-btn" onclick="toggleMenu()">&times;</button>
+      <a href="/" class="nav-link active">Home</a>
+      <a href="/services.html" class="nav-link">Services</a>
+      <a href="/portfolio.html" class="nav-link">Portfolio</a>
+      <a href="/contact.html" class="nav-link">Contact</a>
+    </nav>
 
-<nav class="side-menu" id="sideMenu">
-  <button class="close-btn" onclick="toggleMenu()">&times;</button>
-  <a href="/" class="nav-link active">Home</a>
-  <a href="/services.html" class="nav-link">Services</a>
-  <a href="/portfolio.html" class="nav-link">Portfolio</a>
-  <a href="/contact.html" class="nav-link">Contact</a>
-</nav>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="kicker">Professional Agency</span>
+        <h1>WEBSITE<br />DESIGN<br />SERVICES</h1>
+        <p>
+          Get a custom, mobile-friendly website<br />built to convert visitors
+          into customers.
+        </p>
 
-<section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="kicker">Professional Agency</span>
-    <h1>WEBSITE<br>DESIGN<br>SERVICES</h1>
-    <p>Get a custom, mobile-friendly website<br>built to convert visitors into customers.</p>
-    
-    <div class="hero-buttons">
-      <a class="btn primary" href="contact.html">GET A FREE DEMO</a>
-      <a class="btn secondary" href="portfolio.html#projects">VIEW PORTFOLIO</a>
-    </div>
-    <div class="trust-bar">
-      <ul class="feature-list">
-<li>Premium Web Solutions for Any Budget</li>
-<li>Built to Convert Visitors into Customers</li>
-<li>Proudly Canadian Owned & Operated</li></ul>  
-    </div>
-  </div>
-</section>
+        <div class="hero-buttons">
+          <a class="btn primary" href="contact.html">GET A FREE DEMO</a>
+          <a class="btn secondary" href="portfolio.html#projects"
+            >VIEW PORTFOLIO</a
+          >
+        </div>
+        <div class="trust-bar">
+          <ul class="feature-list">
+            <li>Premium Web Solutions for Any Budget</li>
+            <li>Built to Convert Visitors into Customers</li>
+            <li>Proudly Canadian Owned & Operated</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<section class="services">
-  <div class="section-header">
-    <span class="kicker">Benefits</span>
-    <h2>Canada-Based <span class="highlight-teal">Website Design</span> That Drives Results</h2>
-    <p class="subtitle">Unlock the potential of your business with a professionally designed website.</p>
-  </div>
-  
-  <div class="service-grid">
-    <div class="card">
-      <img src="/images/icons/mobile.png" alt="Mobile icon">
-      <h3>Mobile-Friendly</h3>
-      <p>Your site will look great and work perfectly on all devices.</p>
-    </div>
-    <div class="card">
-      <img src="/images/icons/optimize.png" alt="Optimize icon">
-      <h3>Optimized Design</h3>
-      <p>Websites designed specifically to drive calls, bookings, and sales.</p>
-    </div>
-    <div class="card">
-      <img src="/images/icons/rocket.png" alt="Rocket icon">
-      <h3>SEO & Speed</h3>
-      <p>Fast, secure hosting with basic SEO to help your site rank higher.</p>
-    </div>
-  </div>
-</section>
+    <section class="services">
+      <div class="section-header">
+        <span class="kicker">Benefits</span>
+        <h2>
+          Canada-Based <span class="highlight-teal">Website Design</span> That
+          Drives Results
+        </h2>
+        <p class="subtitle">
+          Unlock the potential of your business with a professionally designed
+          website.
+        </p>
+      </div>
 
-<section class="reviews">
-  <div class="section-header">
-    <span class="kicker">Testimonials</span>
-    <h2>Kind words from <span class="highlight-teal">our partners</span></h2>
-    <p class="subtitle">Helping local businesses establish a digital presence they can be proud of.</p>
-  </div>
+      <div class="service-grid">
+        <div class="card">
+          <img src="/images/icons/mobile.png" alt="Mobile icon" />
+          <h3>Mobile-Friendly</h3>
+          <p>Your site will look great and work perfectly on all devices.</p>
+        </div>
+        <div class="card">
+          <img src="/images/icons/optimize.png" alt="Optimize icon" />
+          <h3>Optimized Design</h3>
+          <p>
+            Websites designed specifically to drive calls, bookings, and sales.
+          </p>
+        </div>
+        <div class="card">
+          <img src="/images/icons/rocket.png" alt="Rocket icon" />
+          <h3>SEO & Speed</h3>
+          <p>
+            Fast, secure hosting with basic SEO to help your site rank higher.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <div class="review-grid">
-    <div class="review-card">
-      <p>“I tried building my own site for months but couldn't get it right. Northern Web took over and had a professional, polished site live in a week. The difference in quality is night and day.”</p>
-      <div class="stars">★★★★★</div>
-      <strong>Mark S. | Construction</strong>
-    </div>
+    <section class="reviews">
+      <div class="section-header">
+        <span class="kicker">Testimonials</span>
+        <h2>
+          Kind words from <span class="highlight-teal">our partners</span>
+        </h2>
+        <p class="subtitle">
+          Helping local businesses establish a digital presence they can be
+          proud of.
+        </p>
+      </div>
 
-    <div class="review-card">
-      <p>“It’s rare to find a Canada-based team that is this responsive. They understood exactly what our local customers were looking for. We saw an immediate increase in bookings.”</p>
-      <div class="stars">★★★★★</div>
-      <strong>Elena R. | Health & Wellness</strong>
-    </div>
+      <div class="review-grid">
+        <div class="review-card">
+          <p>
+            “I tried building my own site for months but couldn't get it right.
+            Northern Web took over and had a professional, polished site live in
+            a week. The difference in quality is night and day.”
+          </p>
+          <div class="stars">★★★★★</div>
+          <strong>Mark S. | Construction</strong>
+        </div>
 
-    <div class="review-card">
-      <p>“The $300 start point was great, but the service was worth much more. They handled everything from hosting to SEO, letting me focus on actually running my business.”</p>
-      <div class="stars">★★★★★</div>
-      <strong>David K. | E-commerce</strong>
-    </div>
-  </div>
-</section>
+        <div class="review-card">
+          <p>
+            “It’s rare to find a Canada-based team that is this responsive. They
+            understood exactly what our local customers were looking for. We saw
+            an immediate increase in bookings.”
+          </p>
+          <div class="stars">★★★★★</div>
+          <strong>Elena R. | Health & Wellness</strong>
+        </div>
 
-<footer class="site-footer">
-  <div class="footer-nav">
-    <a href="/" class="active">Home</a>
-    <a href="/services.html">Services</a>
-    <a href="/portfolio.html">Portfolio</a>
-    <a href="/contact.html">Contact</a>
-  </div>
+        <div class="review-card">
+          <p>
+            “The $300 start point was great, but the service was worth much
+            more. They handled everything from hosting to SEO, letting me focus
+            on actually running my business.”
+          </p>
+          <div class="stars">★★★★★</div>
+          <strong>David K. | E-commerce</strong>
+        </div>
+      </div>
+    </section>
 
-  <div class="footer-cta-box">
-    <p>START YOUR PROJECT</p>
-    <a href="mailto:hello@northernwebonline.ca" class="footer-email">hello@northernwebonline.ca</a>
-  </div>
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/" class="active">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/contact.html">Contact</a>
+      </div>
 
-  <div class="footer-location">
-    <span>Ontario, Canada</span>
-  </div>
-</footer>
+      <div class="footer-cta-box">
+        <p>START YOUR PROJECT</p>
+        <a href="mailto:hello@northernwebonline.ca" class="footer-email"
+          >hello@northernwebonline.ca</a
+        >
+      </div>
 
-<script>
-function toggleMenu() {
-  document.getElementById("sideMenu").classList.toggle("open");
-}
-</script>
+      <div class="footer-location">
+        <span>Ontario, Canada</span>
+      </div>
+    </footer>
 
-</body>
+    <script>
+      function toggleMenu() {
+        document.getElementById("sideMenu").classList.toggle("open");
+      }
+    </script>
+  </body>
 </html>
