@@ -8,7 +8,7 @@
     --white: #ffffff;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
-
+.site-footer p {text-align: center;}
   * {
     margin: 0; padding: 0;
     box-sizing: border-box;
@@ -202,10 +202,10 @@ body p {text-align: left;}
   .pricing-table { /* styles will go here */ }
 
   /* --- Mobile Responsiveness --- */
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .navbar { padding: calc(10px + env(safe-area-inset-top)) 20px 10px; }
     .hero { padding-top: 75px; height: auto; min-height: 100vh; }
-    .hero h1 { font-size: 3rem; }
+    .hero h1 { font-size: 3rem; }   
     .hero-content { padding: 0 20px; }
     .hero-buttons { flex-direction: column; width: 100%; }
     .btn { width: 100%; text-align: center; }
@@ -265,7 +265,7 @@ body p {text-align: left;}
       font-weight: bold;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
       .pricing-card.featured { transform: scale(1); margin-top: 30px; }
   }
 /* --- Add-on Services --- */
