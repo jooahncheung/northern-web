@@ -37,50 +37,52 @@
         <p class="subtitle">Transparent pricing with no hidden fees or long-term contracts.</p>
     </div>
 
-    <div class="service-grid">
-        <div class="card pricing-card">
-            <span class="kicker">Standard</span>
-            <h3>Starting at <span class="highlight-teal">$300</span></h3>
-            <p>The essentials for a professional online presence.</p>
-            <ul class="feature-list">
-                <li>Up to 3 Custom Pages</li>
-                <li>Mobile Responsive Design</li>
-                <li>Basic SEO Setup</li>
-                <li>Secure Hosting Setup</li>
-                <li>7-Day Turnaround</li>
-            </ul>
-            <a href="contact.html" class="btn primary">Get Started</a>
-        </div>
+    <div class="pricing-slider-wrapper">
+        <div class="service-grid">
+            <div class="card pricing-card">
+                <span class="kicker">Standard</span>
+                <h3>Starting at <span class="highlight-teal">$300</span></h3>
+                <p>The essentials for a professional online presence.</p>
+                <ul class="feature-list">
+                    <li>Up to 3 Custom Pages</li>
+                    <li>Mobile Responsive Design</li>
+                    <li>Basic SEO Setup</li>
+                    <li>Secure Hosting Setup</li>
+                    <li>7-Day Turnaround</li>
+                </ul>
+                <a href="contact.html" class="btn primary">Get Started</a>
+            </div>
 
-        <div class="card pricing-card featured">
-            <div class="popular-tag">Most Popular</div>
-            <span class="kicker">Professional</span>
-            <h3>Custom <span class="highlight-teal">Quote</span></h3>
-            <p>Advanced features and speed for growing businesses.</p>
-            <ul class="feature-list">
-                <li>Up to 8 Custom Pages</li>
-                <li>Mobile Responsive Design</li>
-                <li>Advanced On-Page SEO</li>
-                <li>Contact & Lead Forms</li>
-                <li>Google Business Setup</li>
-                <li>Speed & Performance Tuning</li>
-            </ul>
-            <a href="contact.html" class="btn primary">Inquire Now</a>
-        </div>
+            <div class="card pricing-card featured">
+                <div class="popular-tag">Most Popular</div>
+                <span class="kicker">Professional</span>
+                <h3>Custom <span class="highlight-teal">Quote</span></h3>
+                <p>Advanced features and speed for growing businesses.</p>
+                <ul class="feature-list">
+                    <li>Up to 8 Custom Pages</li>
+                    <li>Mobile Responsive Design</li>
+                    <li>Advanced On-Page SEO</li>
+                    <li>Contact & Lead Forms</li>
+                    <li>Google Business Setup</li>
+                    <li>Speed & Performance Tuning</li>
+                </ul>
+                <a href="contact.html" class="btn primary">Inquire Now</a>
+            </div>
 
-        <div class="card pricing-card">
-            <span class="kicker">Partner</span>
-            <h3>Custom <span class="highlight-teal">Monthly</span></h3>
-            <p>Your dedicated web department for ongoing growth.</p>
-            <ul class="feature-list">
-                <li>Unlimited Pages & Updates</li>
-                <li>Priority 24/7 Support</li>
-                <li>Monthly Performance Audits</li>
-                <li>Advanced Security & Backups</li>
-                <li>Full SEO Maintenance</li>
-                <li>Mobile Optimization</li>
-            </ul>
-            <a href="contact.html" class="btn primary">Become a Partner</a>
+            <div class="card pricing-card">
+                <span class="kicker">Partner</span>
+                <h3>Custom <span class="highlight-teal">Monthly</span></h3>
+                <p>Your dedicated web department for ongoing growth.</p>
+                <ul class="feature-list">
+                    <li>Unlimited Pages & Updates</li>
+                    <li>Priority 24/7 Support</li>
+                    <li>Monthly Performance Audits</li>
+                    <li>Advanced Security & Backups</li>
+                    <li>Full SEO Maintenance</li>
+                    <li>Mobile Optimization</li>
+                </ul>
+                <a href="contact.html" class="btn primary">Become a Partner</a>
+            </div>
         </div>
     </div>
 </section>
@@ -181,32 +183,43 @@
     <span>Ontario, Canada</span>
   </div>
 </footer>
-
-
-
 <script>
-    // Main Navigation Menu Toggle
+    // Toggle for the Slide-out Side Menu
     function toggleMenu() {
         document.getElementById('sideMenu').classList.toggle('open');
     }
 
-    // Add-on Services Toggle (Mobile Only)
+    // Toggle for the A La Carte Dropdowns
     function toggleCategory(headerElement) {
-        // Only trigger toggle if we are on a mobile-sized screen
         if (window.innerWidth <= 768) {
-            const parent = headerElement.parentElement;
-            parent.classList.toggle('open');
+            headerElement.parentElement.classList.toggle('open');
         }
     }
 
-    // Optional: Reset categories if window is resized to desktop
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            document.querySelectorAll('.category-block').forEach(block => {
-                block.classList.remove('open');
-            });
+    // Carousel Observer Logic
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                document.querySelectorAll('.pricing-card').forEach(c => c.classList.remove('active'));
+                entry.target.classList.add('active');
+            }
+        });
+    }, { 
+        root: document.querySelector('.pricing-slider-wrapper'),
+        rootMargin: '0px -20% 0px -20%', 
+        threshold: 0.5 
+    });
+
+    document.querySelectorAll('.pricing-card').forEach(card => observer.observe(card));
+
+    // Center the featured plan on load
+    window.addEventListener('load', () => {
+        const featured = document.querySelector('.pricing-card.featured');
+        if (featured) {
+            featured.scrollIntoView({ behavior: 'auto', inline: 'center' });
+            featured.classList.add('active');
         }
     });
-    </script>
+</script>
 </body>
 </html>

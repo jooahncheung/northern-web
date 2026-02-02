@@ -336,8 +336,59 @@
     margin: 0;
 }
 
-/* --- Mobile Specific Logic --- */
+/* --- Mobile Specific Logic (Carousel & Dropdowns) --- */
 @media (max-width: 768px) {
+    
+    /* 1. Pricing Carousel Container */
+    .pricing-slider-wrapper {
+        margin: 0 -5%;
+        padding: 50px 0; 
+        overflow-x: auto;
+        display: flex;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .pricing-slider-wrapper::-webkit-scrollbar { display: none; }
+
+    /* The container for the cards inside the slider */
+    .pricing-slider-wrapper .service-grid {
+        display: flex;
+        gap: 15px;
+        padding: 0 15%; /* Ensures side cards peek in even on the middle plan */
+    }
+
+    /* 2. Pricing Cards (Inactive State) */
+    .pricing-card {
+        width: 70vw; /* Narrower width for better visibility of side options */
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        
+        /* FAINT BORDER: Very subtle teal line */
+        border: 1px solid rgba(44, 171, 154, 0.15);
+        
+        /* Shrunken and lowered */
+        transform: scale(0.85) translateY(30px); 
+        opacity: 0.4;
+        filter: blur(1px);
+        transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        position: relative;
+    }
+
+    /* 3. Pricing Cards (Active State) */
+    .pricing-card.active {
+        /* SOLID BORDER: Bright teal when in focus */
+        border: 2px solid var(--teal); 
+        
+        transform: scale(1.05) translateY(0);
+        opacity: 1;
+        filter: blur(0);
+        z-index: 10;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    /* 4. A La Carte Dropdowns */
     .chevron { display: block; }
 
     .category-header {
@@ -346,12 +397,13 @@
         border-radius: 10px;
         border: 1px solid rgba(0, 0, 0, 0.1);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        margin-bottom: 10px; /* Space between headers when closed */
+        margin-bottom: 10px;
+        cursor: pointer;
     }
 
     .category-title { border-bottom: none; padding: 0; }
 
-    /* Hide the grid by default ONLY on mobile */
+    /* Hide the grid for dropdowns only */
     .category-block .service-grid {
         display: none; 
         grid-template-columns: 1fr;
@@ -359,7 +411,7 @@
         gap: 20px;
     }
 
-    /* Show the grid when the "open" class is added via JS */
+    /* Show dropdown content when toggled */
     .category-block.open .service-grid {
         display: grid;
         animation: fadeIn 0.3s ease;
@@ -368,26 +420,35 @@
     .category-block.open .chevron { transform: rotate(180deg); }
 }
 
-/* --- Desktop Layout (Ensure visibility) --- */
+/* --- Desktop Layout (769px and Up) --- */
 @media (min-width: 769px) {
+    /* Reset Pricing Cards for Desktop */
+    .pricing-card {
+        width: 100%;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        border: 1px solid transparent;
+    }
+
+    .pricing-card.featured {
+        border: 2px solid var(--teal);
+        transform: scale(1.03) !important;
+    }
+
+    /* Force Dropdowns to be normal Grids on Desktop */
     .category-block .service-grid {
-        display: grid !important; /* Force grid to show on desktop */
+        display: grid !important; 
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
         margin-top: 25px;
-        margin-bottom: 60px; /* Space between desktop categories */
+        margin-bottom: 60px;
     }
     
     .category-header {
-        cursor: default; /* Remove pointer on desktop since it doesn't click */
+        cursor: default;
+        pointer-events: none; /* Disables clicking the header on desktop */
     }
-}
-/* --- Desktop Layout --- */
-@media (min-width: 769px) {
-    .add-ons-section .service-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Force 3 columns on desktop */
-        gap: 30px;
-        margin-top: 25px;
-    }
+
+    .chevron { display: none; }
 }
