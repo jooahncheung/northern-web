@@ -542,7 +542,7 @@ body p {text-align: left;}
 
     .project-container, .project-container.reverse {
         flex-direction: column;
-        text-align: center;
+        text-align: center
     }
     .phone-img { width: 25%; right: 10%; bottom: -20px; }
 }

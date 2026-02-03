@@ -1,20 +1,72 @@
-# northern-web 🇨🇦
+# 🌐 Northern Web | Professional Web Design
 
-Professional Web Design Services for Ontario Businesses. This project serves as a high-performance landing page designed to convert local traffic into customers.
+[![HTML5](https://img.shields.io/badge/HTML5-SEMANTIC-121212?style=for-the-badge&logo=html5&logoColor=white&labelColor=008080)](https://github.com/jooahncheung/northern-web)
+[![CSS3](https://img.shields.io/badge/CSS3-MODULAR-121212?style=for-the-badge&logo=css3&logoColor=white&labelColor=008080)](https://github.com/jooahncheung/northern-web)
+[![JavaScript](https://img.shields.io/badge/JAVASCRIPT-VANILLA-121212?style=for-the-badge&logo=javascript&logoColor=white&labelColor=008080)](https://github.com/jooahncheung/northern-web)
 
-## 🛠 Technical Implementation
+### _Building fast, accessible, and responsive digital solutions to bridge the gap between local shops and the modern web._
 
-- **Responsive Architecture:** Built using a mobile-first approach with CSS Grid and Flexbox to ensure seamless viewing across all screen sizes.
-- **iOS Optimization:** Specifically addressed "Safe Area" constraints for modern mobile browsers, ensuring navigation is accessible behind device notches.
-- **Modular CSS:** Utilized CSS Variables (`:root`) for global branding consistency, allowing for rapid color and theme pivots.
-- **Vanilla Interaction:** Lightweight JavaScript implementation for the side-menu toggle, prioritizing speed and performance over heavy libraries.
-
-## 🎨 Branding & UI
-
-- **High-Contrast Theme:** Uses a sophisticated "Dark & Teal" palette to emphasize professional credibility.
-- **Conversion-Driven Layout:** Strategic placement of "Trust Bars" and "Testimonial Grids" to build immediate user confidence.
-- **Performance:** Optimized image handling and minimalist code for fast load times in regional markets.
+**Northern Web** is a high-performance, conversion-focused landing page tailored for small businesses in the Ontario market. It combines clean **Semantic HTML5**, **Modern CSS Architecture**, and a **Mobile-First** philosophy to deliver a premium user experience.
 
 ---
 
-_Status: Homepage Complete. Services & Portfolio pages currently in development._
+## 🔗 Live Demo
+
+View the live project here:
+👉 [**Explore Northern Web Live**](https://northernweb.vercel.app)
+
+---
+
+## 📱 The Showcase
+
+<p align="left">
+  <img src="./images/mockups/northern-laptop.png" width="48%" alt="Desktop Preview" />
+  <img src="./images/mockups/northern-phone.png" width="15%" alt="Mobile Preview" />
+</p>
+
+> **Design Note:** The interface is engineered for maximum performance across all device tiers, utilizing custom safe-area logic for modern mobile displays.
+
+### 🚀 What It Does
+
+- **Mobile-First Design:** Builds fully responsive websites that look great on any screen.
+- **Visual Strategy:** Applies high-level design skills to create visually pleasing interfaces.
+- **Business Growth:** Focuses on **clarity, speed, and client conversions** to help service-based businesses grow.
+- **Local Focus:** Specifically designed to meet the needs of local companies and service-based businesses.
+
+### 🛠 Tech Stack
+
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- **Responsive Design**
+- **AI-Enhanced Workflow:** Developed using AI assistants for rapid ideation, debugging, and creation.
+
+---
+
+## ⚙️ Development Standards
+
+- **Clean Code:** Minimalist, zero-dependency **Vanilla JS** for peak performance.
+- **Accessibility:** Semantic **HTML5** structure built for screen readers and SEO.
+- **Modern CSS:** Scalable, modular architecture using **Flexbox, Grid, and Variables**.
+- **Mobile-First:** Engineered for fluid responsiveness across all modern device tiers.
+- **AI-Augmented:** Leveraging **AI-Enhanced Workflows** for rapid ideation and refactoring.
+
+---
+
+### 🧠 What I’m Learning
+
+- **Effective Layouts:** Translating business needs into simple, effective web structures.
+- **Attention to Detail:** Mastering performance, readability, and visual hierarchy.
+- **Modern Efficiency:** Leveraging AI tools to maximize development workflow and speed.
+
+---
+
+## 📈 Current Focus & Next Steps
+
+- **🏗️ Site Construction:** Finalizing the responsive layout and internal logic for the Northern Web prototype.
+- **📚 Skill Expansion:** Refining core HTML/CSS/JS fundamentals while learning the business side of web development.
+- **🛠️ Future-Proofing:** Preparing the architecture to eventually support backend features and professional client tools.
+
+---
+
+_This project is part of my professional development portfolio. Code is reviewed for quality and semantic accuracy._
