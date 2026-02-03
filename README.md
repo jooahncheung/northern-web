@@ -1,7 +1,7 @@
 # 🌐 Northern Web | Professional Web Design
 
 [![HTML5](https://img.shields.io/badge/HTML5-SEMANTIC-121212?style=for-the-badge&logo=html5&logoColor=white&labelColor=008080)](https://github.com/jooahncheung/northern-web)
-[![CSS3](https://img.shields.io/badge/CSS3-MODULAR-121212?style=for-the-badge&logo=css3&logoColor=white&labelColor=008080)](https://github.com/jooahncheung/northern-web)
+[![CSS3](https://img.shields.io/badge/CSS3-MODULAR-121212?style=for-the-badge&logo=css&logoColor=white&labelColor=008080)](https://github.com/jooahncheung/northern-web)
 [![JavaScript](https://img.shields.io/badge/JAVASCRIPT-VANILLA-121212?style=for-the-badge&logo=javascript&logoColor=white&labelColor=008080)](https://github.com/jooahncheung/northern-web)
 
 ### _Building fast, accessible, and responsive digital solutions to bridge the gap between local shops and the modern web._
@@ -69,4 +69,4 @@ View the live project here:
 
 ---
 
-_This project is part of my professional development portfolio. Code is reviewed for quality and semantic accuracy._
+_The foundational build for my upcoming web agency. This repository establishes the high-performance technical standards for all future client work._
