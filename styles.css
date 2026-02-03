@@ -19,7 +19,6 @@
   body { background: var(--light); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
 body p {text-align: left;}
-
   /* --- Navigation --- */
   .navbar {
     position: fixed;
@@ -222,12 +221,16 @@ body p {text-align: left;}
     min-height: 700px;
 }
 
-  .pricing-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
 
+  .pricing-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px; /* Ensures the outer "breathing room" is identical */
+}
+.pricing-card .kicker {
+    margin-bottom: 8px; /* Fixed space under 'Standard', 'Professional', etc. */
+    display: block;
+}
   .pricing-card.featured {
       border: 2px solid var(--teal);
       position: relative;
@@ -251,6 +254,10 @@ body p {text-align: left;}
       list-style: none;
       margin: 20px 0;
   }
+  .pricing-card .feature-list {
+    margin-top: auto; /* Pushes the list and button to the bottom if content is short */
+    flex-grow: 1;
+}
 
   .feature-list li {
       padding: 10px 0;
@@ -264,7 +271,11 @@ body p {text-align: left;}
       margin-right: 10px;
       font-weight: bold;
   }
-
+.pricing-card p {
+    margin-bottom: 24px; /* Fixed space before the feature list starts */
+    line-height: 1.5;
+    min-height: 3em; /* Essential: reserves space for 2 lines of text so cards align */
+}
   @media (max-width: 992px) {
       .pricing-card.featured { transform: scale(1); margin-top: 30px; }
   }
@@ -379,7 +390,12 @@ body p {text-align: left;}
         transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         position: relative;
     }
-
+.pricing-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px; /* Fixed space under the price/title */
+    line-height: 1.2;
+    min-height: 1.2em; /* Keeps heights consistent if one title wraps */
+}
     /* 3. Pricing Cards (Active/Focused State) */
     .pricing-card.active {
         /* Solid teal border when focused */
@@ -542,7 +558,7 @@ body p {text-align: left;}
 
     .project-container, .project-container.reverse {
         flex-direction: column;
-        text-align: center
+        text-align: center;
     }
     .phone-img { width: 25%; right: 10%; bottom: -20px; }
 }
