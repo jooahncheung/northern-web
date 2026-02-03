@@ -591,4 +591,74 @@ body p {text-align: left;}
         0%, 100% { transform: translateX(0); opacity: 0.5; }
         50% { transform: translateX(10px); opacity: 1; }
     }
+
+}
+/* The "i" Icon Style */
+.info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    background: #e0e6ed;
+    color: var(--teal);
+    border-radius: 50%;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 800;
+    margin-left: 6px;
+    cursor: help;
+    position: relative;
+    vertical-align: middle;
+    outline: none;
+    flex-shrink: 0; /* Prevents icon from squishing on small screens */
+}
+
+/* The Tooltip Bubble */
+.info-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 140%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--dark);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+    width: 220px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    pointer-events: none;
+}
+
+/* The Small Arrow Pointing Down */
+.info-icon::before {
+    content: '';
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--dark);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    z-index: 100;
+}
+
+/* Activation Logic (Hover and Mobile Tap) */
+.info-icon:hover::after, 
+.info-icon:focus::after,
+.info-icon:hover::before,
+.info-icon:focus::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
 }
