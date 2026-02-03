@@ -259,18 +259,23 @@ body p {text-align: left;}
     flex-grow: 1;
 }
 
-  .feature-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      font-size: 0.95rem;
-  }
+.feature-list li {
+    display: flex; /* Keeps everything in one row */
+    align-items: flex-start; /* Aligns items to the top for multi-line text */
+    gap: 8px; /* Consistent spacing between checkmark, text, and icon */
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
 
-  .feature-list li::before {
-      content: '✓';
-      color: var(--teal);
-      margin-right: 10px;
-      font-weight: bold;
-  }
+/* Remove the margin-right from your existing ::before checkmark */
+.feature-list li::before {
+    content: '✓';
+    color: var(--teal);
+    font-weight: bold;
+    flex-shrink: 0; /* Ensures checkmark doesn't squish */
+}   
 .pricing-card p {
     margin-bottom: 24px; /* Fixed space before the feature list starts */
     line-height: 1.5;
@@ -591,7 +596,6 @@ body p {text-align: left;}
         0%, 100% { transform: translateX(0); opacity: 0.5; }
         50% { transform: translateX(10px); opacity: 1; }
     }
-
 }
 /* The "i" Icon Style */
 .info-icon {
