@@ -562,3 +562,33 @@ body p {text-align: left;}
     }
     .phone-img { width: 25%; right: 10%; bottom: -20px; }
 }
+/* Hide by default (PC) */
+.swipe-indicator {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .swipe-indicator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 15px;
+        color: var(--teal);
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .swipe-hand {
+        font-size: 1.2rem;
+        animation: swipeFloat 2s infinite ease-in-out;
+    }
+
+    /* Animation to make the icon move side-to-side */
+    @keyframes swipeFloat {
+        0%, 100% { transform: translateX(0); opacity: 0.5; }
+        50% { transform: translateX(10px); opacity: 1; }
+    }
+}
