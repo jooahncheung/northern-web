@@ -567,7 +567,7 @@ body p {text-align: left;}
     display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 800px) {
     .swipe-indicator {
         display: flex;
         align-items: center;
