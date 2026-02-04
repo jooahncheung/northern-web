@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Contact Us | Northern Web Online</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <img src="images/icons/logo.png" alt="Northern Web Online" class="logo" />
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <nav class="side-menu" id="sideMenu">
+      <button class="close-btn" onclick="toggleMenu()">&times;</button>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="kicker">Get In Touch</span>
+        <h1>LET'S BUILD<br />YOUR DIGITAL<br />PRESENCE</h1>
+        <p>
+          Based in Ontario, serving clients across Canada.<br />Fill out the
+          form below to start your 7-day turnaround.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#form-section" class="btn primary">SEND A MESSAGE</a>
+          <a href="mailto:hello@northernwebonline.ca" class="btn secondary"
+            >DIRECT EMAIL</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div class="footer-cta-box">
+        <p>ONTARIO, CANADA</p>
+        <span class="footer-email">Local Support. Global Quality.</span>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sideMenu").classList.toggle("open");
+      }
+    </script>
+  </body>
+</html>
