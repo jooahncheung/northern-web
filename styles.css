@@ -718,3 +718,52 @@ text-align: center;
     background: var(--white) !important;
     padding: 40px !important;
 }
+
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--light);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--teal);
+}
+
+.btn.full-width { width: 100%; border: none; }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
