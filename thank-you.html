@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Message Received | Northern Web Online</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <img src="images/icons/logo.png" alt="Northern Web Online" class="logo" />
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <nav class="side-menu" id="sideMenu">
+      <button class="close-btn" onclick="toggleMenu()">&times;</button>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <section class="hero" style="height: 100vh; min-height: 600px">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="kicker">Success</span>
+        <h1>MESSAGE<br />RECEIVED</h1>
+        <p>
+          Thanks for reaching out. We have received your inquiry and will
+          respond within 24 hours.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="index.html" class="btn primary">BACK TO HOME</a>
+          <a href="portfolio.html" class="btn secondary">VIEW OUR WORK</a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sideMenu").classList.toggle("open");
+      }
+    </script>
+  </body>
+</html>
