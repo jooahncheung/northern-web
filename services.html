@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Services & Pricing | Northern Web</title>
+    
+    <title>Web Design Pricing Toronto & Mississauga | Northern Web</title>
+    <meta name="description" content="Affordable web design packages in Toronto and Mississauga. Professional websites with a 7-day turnaround starting at $300. Custom SEO-optimized sites for Ontario small businesses.">
+    
     <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Service",
+      "serviceType": "Web Design",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Northern Web Online",
+        "areaServed": [
+          {"@type": "City", "name": "Toronto"},
+          {"@type": "City", "name": "Mississauga"},
+          {"@type": "State", "name": "Ontario"}
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -12,7 +32,7 @@
         <img src="images/icons/logo.png" alt="Northern Web" class="logo">
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
     </nav>
-    ///
+
 <nav class="side-menu" id="sideMenu">
   <button class="close-btn" onclick="toggleMenu()">&times;</button>
   <a href="index.html">Home</a>
@@ -20,12 +40,13 @@
   <a href="portfolio.html">Portfolio</a>
   <a href="contact.html">Contact</a>
 </nav>
-<section id="services-hero"class="hero">
+
+<section id="services-hero" class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="kicker">Pricing & Plans</span>
-    <h1>TRANSPARENT<br>PRICING<br>SOLUTIONS</h1>
-    <p>High-performance websites designed to convert<br>browsers into lifelong customers.</p>
+    <h1>TORONTO & ONTARIO<br>WEB DESIGN<br>PRICING</h1>
+    <p>High-performance websites for Ontario businesses,<br>designed to convert browsers into customers.</p>
     
 <div class="hero-buttons">
   <a href="#plans" class="btn primary">VIEW PLANS</a>
@@ -34,12 +55,14 @@
 
     <div class="trust-bar">
       <ul class="feature-list">
-<li>Transparent Pricing</li>
-        <li>No Hidden Fees</li>
-        <li>100% Canadian Support</li></ul>  
+        <li>Custom Builds</li>
+        <li>Mobile Optimized</li>
+        <li>SEO Focused</li>
+      </ul>  
     </div>
   </div>
 </section>
+
 <section id="plans" class="services">
     <div class="section-header">
         <span class="kicker">Choose Your Path</span>
@@ -200,19 +223,16 @@
             <p>ONTARIO, CANADA</p>
 </footer>
 <script>
-    // Toggle for the Slide-out Side Menu
     function toggleMenu() {
         document.getElementById('sideMenu').classList.toggle('open');
     }
 
-    // Toggle for the A La Carte Dropdowns
     function toggleCategory(headerElement) {
         if (window.innerWidth <= 768) {
             headerElement.parentElement.classList.toggle('open');
         }
     }
 
-    // Carousel Observer Logic (This handles the active state highlighting, keep this!)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -227,16 +247,6 @@
     });
 
     document.querySelectorAll('.pricing-card').forEach(card => observer.observe(card));
-
-    /* --- DELETED THE SCROLL BLOCK BELOW --- */
-    /* window.addEventListener('load', () => {
-        const featured = document.querySelector('.pricing-card.featured');
-        if (featured) {
-            featured.scrollIntoView({ behavior: 'auto', inline: 'center' });
-            featured.classList.add('active');
-        }
-    }); 
-    */
 </script>
 </body>
 </html>

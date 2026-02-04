@@ -1,140 +1,200 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Portfolio | Northern Web Online</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
 
+    <title>Web Design Portfolio Toronto & Ontario | Northern Web Online</title>
+
+    <meta
+      name="description"
+      content="View our web design portfolio featuring small businesses in Toronto, Mississauga, and the GTA. Professional, high-speed websites designed for local SEO."
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "CreativeWorkSeries",
+        "name": "Northern Web Online Portfolio",
+        "description": "Web design projects for local businesses in Toronto and Mississauga.",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Northern Web Online"
+        }
+      }
+    </script>
+  </head>
+  <body>
     <header class="navbar">
-        <img src="images/icons/logo.png" alt="Northern Web Online" class="logo">
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <img src="images/icons/logo.png" alt="Northern Web Online" class="logo" />
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
     </header>
 
     <nav class="side-menu" id="sideMenu">
-        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+      <button class="close-btn" onclick="toggleMenu()">&times;</button>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="kicker">Our Work</span>
+        <h1>TORONTO &<br />ONTARIO<br />PORTFOLIO</h1>
+        <p>
+          Explore our recent demos from local barbershops<br />to professional
+          service contractors
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary">VIEW RECENT WORK</a>
+          <a href="contact.html" class="btn secondary">START YOUR PROJECT</a>
+        </div>
+
+        <div class="trust-bar">
+          <ul class="feature-list">
+            <li>Custom Builds</li>
+            <li>Mobile Optimized</li>
+            <li>SEO Focused</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <section id="projects" class="portfolio-feed">
+      <div class="portfolio-item">
+        <div class="project-container">
+          <div class="project-info">
+            <span class="tier-tag standard">Standard Package</span>
+            <h2>Golden Clippers Barbershop</h2>
+            <p>
+              A high-speed landing page designed for local SEO in Toronto. We
+              integrated a visual gallery and a direct mobile booking system to
+              reduce friction for customers.
+            </p>
+            <ul class="project-features">
+              <li>High-Resolution Gallery</li>
+              <li>One-Tap Booking Integration</li>
+              <li>Google Maps Optimization</li>
+            </ul>
+            <a
+              href="https://goldenclippers.vercel.app/index.html"
+              class="btn primary"
+              >VIEW LIVE DEMO</a
+            >
+          </div>
+          <div class="project-visual">
+            <div class="mockup-wrapper">
+              <img
+                src="images/mockups/clippers-laptop.png"
+                alt="Toronto Barbershop Web Design Laptop View"
+                class="laptop-img"
+              />
+              <img
+                src="images/mockups/clippers-phone.png"
+                alt="Toronto Barbershop Web Design Mobile View"
+                class="phone-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item alt-bg">
+        <div class="project-container reverse">
+          <div class="project-info">
+            <span class="tier-tag professional">Professional Package</span>
+            <h2>CoolFlow HVAC</h2>
+            <p>
+              A multi-page lead generation engine for this Mississauga-based
+              contractor. Features emergency service alerts, custom quote forms,
+              and detailed service landing pages.
+            </p>
+            <ul class="project-features">
+              <li>24/7 Emergency Service Integration</li>
+              <li>Custom Lead Capture Forms</li>
+              <li>Advanced Performance Tuning</li>
+            </ul>
+            <a
+              href="https://coolflowhvac.vercel.app/services.html"
+              class="btn primary"
+              >VIEW LIVE DEMO</a
+            >
+          </div>
+          <div class="project-visual">
+            <div class="mockup-wrapper">
+              <img
+                src="images/mockups/hvac-laptop.png"
+                alt="Mississauga HVAC Contractor Web Design Laptop"
+                class="laptop-img"
+              />
+              <img
+                src="images/mockups/hvac-phone.png"
+                alt="Mississauga HVAC Contractor Web Design Mobile"
+                class="phone-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item">
+        <div class="project-container">
+          <div class="project-info">
+            <span class="tier-tag partner">Partner Tier</span>
+            <h2>Your Dedicated Web Dept.</h2>
+            <p>
+              Reserved for our next monthly partner in Ontario. This tier is for
+              businesses that require 100% hands-off management with weekly
+              performance growth.
+            </p>
+            <ul class="project-features">
+              <li>Unlimited Content Updates</li>
+              <li>Priority 24/7 Support Line</li>
+              <li>Monthly Growth & SEO Audits</li>
+            </ul>
+            <a href="contact.html" class="btn primary">START A PARTNERSHIP</a>
+          </div>
+          <div class="project-visual">
+            <div class="partner-placeholder">
+              <div class="placeholder-overlay">
+                <span>PARTNER SLOT AVAILABLE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="portfolio.html" class="active">Portfolio</a>
         <a href="contact.html">Contact</a>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="kicker">Our Work</span>
-            <h1>DESIGN<br>THAT DRIVES<br>RESULTS</h1>
-            <p>Explore our recent launches—from local barbershops<br>to professional service contractors.</p>
-            
-            <div class="hero-buttons">
-                <a href="#projects" class="btn primary">VIEW RECENT WORK</a>
-                <a href="contact.html" class="btn secondary">START YOUR PROJECT</a>
-            </div>
-
-
- <div class="trust-bar">
-      <ul class="feature-list">
-<li>Custom Builds</li>
-        <li>Mobile Optimized</li>
-        <li>SEO Focused</li></ul>  
-    </div>
-
-            </div>
-        </div>
-    </header>
-
-    <section id="projects" class="portfolio-feed">
-        
-        <div class="portfolio-item">
-            <div class="project-container">
-                <div class="project-info">
-                    <span class="tier-tag standard">Standard Package</span>
-                    <h2>Golden Clippers Barbershop</h2>
-                    <p>A high-speed landing page designed for local SEO. We integrated a visual gallery and a direct mobile booking system to reduce friction for customers.</p>
-                    <ul class="project-features">
-                        <li>High-Resolution Gallery</li>
-                        <li>One-Tap Booking Integration</li>
-                        <li>Google Maps Optimization</li>
-                    </ul>
-                    <a href="https://goldenclippers.vercel.app/index.html" class="btn primary">VIEW LIVE DEMO</a>
-                </div>
-                <div class="project-visual">
-                    <div class="mockup-wrapper">
-                        <img src="images/mockups/clippers-laptop.png" alt="Laptop View" class="laptop-img">
-                        <img src="images/mockups/clippers-phone.png" alt="Phone View" class="phone-img">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="portfolio-item alt-bg">
-            <div class="project-container reverse">
-                <div class="project-info">
-                    <span class="tier-tag professional">Professional Package</span>
-                    <h2>CoolFlow HVAC</h2>
-                    <p>A multi-page lead generation engine. Features emergency service alerts, custom quote forms, and detailed service landing pages for every district.</p>
-                    <ul class="project-features">
-                        <li>24/7 Emergency Service Integration</li>
-                        <li>Custom Lead Capture Forms</li>
-                        <li>Advanced Performance Tuning</li>
-                    </ul>
-                    <a href="https://coolflowhvac.vercel.app/services.html" class="btn primary">VIEW LIVE DEMO</a>
-                </div>
-                <div class="project-visual">
-                    <div class="mockup-wrapper">
-                        <img src="images/mockups/hvac-laptop.png" alt="Laptop View" class="laptop-img">
-                        <img src="images/mockups/hvac-phone.png" alt="Phone View" class="phone-img">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="portfolio-item">
-            <div class="project-container">
-                <div class="project-info">
-                    <span class="tier-tag partner">Partner Tier</span>
-                    <h2>Your Dedicated Web Dept.</h2>
-                    <p>Reserved for our next monthly partner. This tier is for businesses that require 100% hands-off management with weekly performance growth.</p>
-                    <ul class="project-features">
-                        <li>Unlimited Content Updates</li>
-                        <li>Priority 24/7 Support Line</li>
-                        <li>Monthly Growth & SEO Audits</li>
-                    </ul>
-                    <a href="contact.html" class="btn primary">START A PARTNERSHIP</a>
-                </div>
-                <div class="project-visual">
-                    <div class="partner-placeholder">
-                        <div class="placeholder-overlay">
-                            <span>PARTNER SLOT AVAILABLE</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <footer class="site-footer">
-        <div class="footer-nav">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="portfolio.html" class="active">Portfolio</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <div class="footer-cta-box">
-            <p>START YOUR PROJECT</p>
-            <a href="mailto:hello@northernwebonline.ca" class="footer-email">hello@northernwebonline.ca</a>
-        </div>
-        <div class="footer-cta-box">
-            <p>ONTARIO, CANADA</p>
+      </div>
+      <div class="footer-cta-box">
+        <p>START YOUR PROJECT</p>
+        <a href="mailto:hello@northernwebonline.ca" class="footer-email"
+          >hello@northernwebonline.ca</a
+        >
+      </div>
+      <div class="footer-cta-box">
+        <p>ONTARIO, CANADA</p>
+      </div>
     </footer>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('sideMenu').classList.toggle('open');
-        }
+      function toggleMenu() {
+        document.getElementById("sideMenu").classList.toggle("open");
+      }
     </script>
-</body>
-</html> 
+  </body>
+</html>
